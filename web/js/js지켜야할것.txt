@@ -1,0 +1,54 @@
+html 안에 쓸때는 body가 끝나기 직전에 사용
+
+0 그냥 0
+null 개발자가 의도하고 비워놓음
+undefined 개발자가 의도하지 않았는데 비어있다
+
+1. 변수 선언시 선언자를 반드시 붙여라
+2. 선언자는 총 세종류가 있다.
+
+var 안쓴다(가끔 코딩 선배들이 쓰는데, 뭐라하진마라.)
+let 안쓴다
+const 이걸 써라(만약 작동 안되면 let 써라)
+
+숫자는 모두 number다
+문자는 모두 string이다
+
+const arr = [1,2,3]; //배열선언
+arr.push(1) //가능
+arr=[2,3,4] //불가능
+
+function addOne(){ //함수선언
+  
+}
+
+const addOne=function(){ //람다함수 선언
+
+}
+
+함수는 변수다
+변수에 함수 저장 가능
+
+js 중요한것
+
+1. 객체 object
+2. 함수 function
+3. 배열 array
+
+object(객체): key와 value로 이루어진 property의 모음
+
+const person ={ //객체선언
+  name: "박준형",
+  birth:1997,
+  familyMembers:["엄마","아빠","동생"],
+  job: "싸피 교육생",
+  isMerriaged: true,
+};
+
+객체는 .(점)으로 접근
+
+배열과 객체의 각각의 요소는 const로 생성하더라도 바꿀수 있다
+
+타입비교는 === !==
+
+for문 돌릴때만 let i 사용

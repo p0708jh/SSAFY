@@ -1,0 +1,43 @@
+1월 25일 (수)
+
+1.카카오오븐 pdf로 뽑아내기,압축하기(30점)
+
+2.목업으로 만들기,html,css 사용(30점) 
+가운데정렬 백그라운드 컬러 글자 찐하게 쉐도우박스 이미지 가져오기 클래스 사용 레이아웃
+글자 크기 간격 마진 width height
+대충이라도 똑같이 구현하면 30점
+
+3.액자만들기(40점)
+border 굵기 정하기
+box-shadow 반드시 알기
+
+
+2월말 평가
+
+const arr = [1,2,3]; //배열선언
+(객체도 마찬가지)
+arr.push(1) //가능
+arr=[2,3,4] //불가능
+
+숫자는 모두 number다
+문자는 모두 string이다
+
+객체란 key와 value로 이루어진 property의 모음
+
+object(객체): key와 value로 이루어진 property의 모음
+
+const person ={ //객체선언
+  name: "박준형",
+  birth:1997,
+  familyMembers:["엄마","아빠","동생"],
+  job: "싸피 교육생",
+  isMerriaged: true,
+};
+
+객체는 .(점)으로 접근
+
+배열과 객체의 각각의 요소는 const로 생성하더라도 바꿀수 있다
+
+타입비교는 === !==
+
+for문 돌릴때만 let i 사용
