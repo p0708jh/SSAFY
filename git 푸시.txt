@@ -1,0 +1,21 @@
+git
+
+
+
+
+
+add : commit 할 내용 담기
+commit : 얼리기
+push : git에 올리기
+
+
+git init  //repository 초기화
+git remote add origin https://github.com/p0708jh/web 	//repositories 에 경로 지정
+git add -A // 파일 모두 추가
+git commit -m " " // 이름 생성
+git push -u origin master // 올리기
+
+
+클론만들기
+git clone https://github.com/p0708jh/jh-git
+

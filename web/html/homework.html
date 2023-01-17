@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+  <style>
+    *{
+  list-style: none;
+  padding: 0;
+  font-family: 'Dongle', sans-serif;
+  text-align: center;
+  color: black;
+}
+    .container{
+    border: 5px solid blue;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    }
+    .box1,.box3{
+      flex:1;
+      border:1px solid black;
+    }
+    .box2{
+      flex:3;
+      display: flex;
+      flex-direction: row;
+      
+      border:1px solid black;
+    }
+    .ch1,.ch2,.ch3{
+      flex:1;
+      border:1px solid red;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">HOLY</div>
+    <div class="box box2">
+      <div class="ch1">G</div>
+      <div class="ch2">RA</div>
+      <div class="ch3">IL</div>
+    </div>
+    <div class="box box3">LAYOUT</div>
+  </div>
+</body>
+</html>

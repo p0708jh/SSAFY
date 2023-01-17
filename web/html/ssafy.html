@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;  
+    }
+    body{
+      height: 1500px;
+      border: 1px solid black;
+    }
+    .header-wrapper{
+      height: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: top;
+      border: 1px solid black;
+      position: fixed;
+      width: 100%;
+    }
+    div{
+      border: 1px solid black;
+    }
+    .logo-wrapper{
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+    .menu-wrapper{
+      display: flex;
+      flex:1;
+      justify-content: left;
+    }
+    
+    .login-wrapper{
+      display: flex;
+      flex:1;
+      justify-content: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-wrapper">
+    <div class="menu-wrapper">
+      <div class="logo-wrapper">
+        <img src="./images/ssafy.png" alt="ssafy" height="30">
+      </div>
+      <div>메뉴1</div>
+      <div>메뉴2</div>
+      <div>메뉴3</div>
+    </div>
+    
+    <div class="login-wrapper">
+      <div>로그인</div>
+      <div>회원가입</div>
+    </div>
+  </div>
+</body>
+</html>

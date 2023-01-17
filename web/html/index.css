@@ -1,0 +1,26 @@
+*{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Dongle', sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.box{
+  padding: 20px 10px;
+  border: 1px solid black;
+  background-color: gray; 
+}
+
+.cat{
+  display: flex;
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  background-image: url(./images/cat.jpg);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  margin:auto;
+  border-radius: 50%;
+}
