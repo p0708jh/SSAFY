@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .font-red {
+        color: red;
+      }
+      .font-blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>classList. //클래스 갖고놀기</h1>
+    <button class="button1">add</button>
+    <button class="button2">remove</button>
+    <button class="button3">toggle</button>
+    <button class="button4">contains(클레스가있는지 없는지)</button>
+    <button class="button5">replace</button>
+    <script>
+      const h1=document.querySelector("h1");
+      const btn1=document.querySelector(".button1");
+      const btn2=document.querySelector(".button2");
+      const btn3=document.querySelector(".button3");
+      const btn4=document.querySelector(".button4");
+      const btn5=document.querySelector(".button5");
+      
+      btn1.addEventListener("click",()=>{
+        h1.classList.add("font-red");
+      });
+
+      btn2.addEventListener("click",()=>{
+        h1.classList.remove("font-red");
+      });
+      
+      btn3.addEventListener("click",()=>{
+        h1.classList.toggle("font-red");
+      });
+      
+      btn4.addEventListener("click",()=>{
+        console.log(h1.classList.contains("font-red"));
+      });
+      
+      btn5.addEventListener("click",()=>{
+        console.log(h1.classList.replace("font-red","font-blue"));
+      });
+    </script>
+  
+  </body>
+</html>

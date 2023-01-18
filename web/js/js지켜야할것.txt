@@ -52,3 +52,9 @@ const person ={ //객체선언
 타입비교는 === !==
 
 for문 돌릴때만 let i 사용
+
+addEventListener("이벤트종류",콜백함수);
+첫번째값: 이벤트 종류
+두번째값: 콜백함수 함수에()없음
+
+addEventListener("click",()=>{})

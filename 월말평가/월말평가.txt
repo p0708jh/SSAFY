@@ -41,3 +41,16 @@ const person ={ //객체선언
 타입비교는 === !==
 
 for문 돌릴때만 let i 사용
+
+let d = document.createElement('div'); // 태그 생성
+let txt= document.createTextNode("준형월드") // 텍스트 생성
+d.append(txt); // 객체 밑으로 자식 노드 추가
+document.querySelector("body").append(btn); 
+
+classList.add("클래스");
+classList.remove("클래스");
+classList.toggle("클래스");
+classList.contains("클래스");
+classList.replace("기존클래스","새로운클래스");
+
+.min.js 컴퓨터가 읽기 좋게 쓸데없는 띄어쓰기나 엔터같은 공백을 모두제거한 js파일
