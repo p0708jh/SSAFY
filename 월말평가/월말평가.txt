@@ -54,3 +54,48 @@ classList.contains("클래스");
 classList.replace("기존클래스","새로운클래스");
 
 .min.js 컴퓨터가 읽기 좋게 쓸데없는 띄어쓰기나 엔터같은 공백을 모두제거한 js파일
+
+이미지 가져오는방법
+-img 태그 src , alt
+-backround-img css url
+
+input type="text"
+
+글자색 color
+배경색 backround-color
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+디스플레이
+블록 영영한줄 전체 크기변경 가능
+인라인 크기변경 불가
+none
+
+z-index 화면표시순서(숫자큰게 위)
+
+js 타입(numver,string,array등등등)중 각자 참조형타입인지 원시형 타입인지 알아두기
+
+var const let 차이
+
+== VS ===
+
+object 접근방식 연습
+
+dom 가져오기
+document.querySelector(".class");
+document.querySelectorAll(".class"); //node리스트 형태로 받아옴
+
+addEventListener 사용법
+
+textContent는 테그안의 텍스트
+value는 input의 값
+
+classList.add("클래스");
+classList.remove("클래스");
+classList.toggle("클래스");
+classList.contains("클래스");
+classList.replace("기존클래스","새로운클래스");
+
+cdn 가장 가까운 서버로 접속하게 해주는 기술
