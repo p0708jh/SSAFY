@@ -1,0 +1,390 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style: none; /* 리스트 점제거*/
+    text-decoration:  none; /* 링크 밑줄제거*/
+    border-collapse: collapse; /* 테이블 서로 붙여주기*/
+    margin:0px;
+    padding:0px;
+    color:#000; /* 기본 폰트 색*/
+}
+
+
+.wrapper{
+    max-width: 100%;
+    width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.intro_bg{
+    background: #15336e;
+    width: 1920px;
+    height:941px;
+}
+
+.header{
+    display: flex;
+    
+    width: 1720px;
+    height: 77px;
+    margin: auto 213px;
+}
+
+.searchArea{
+    position: relative;
+    left:0px;
+    width: 300px;
+    height:40px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin-top: 42px;
+}
+
+.searchArea > form > input{
+    border: none;
+    width:250px;
+    height: 40px;
+    background: rgba(0,0,0,0.0);
+    color:#fff;
+    padding-left:10px;
+}
+.searchArea > form > span{
+    width:50px;
+    color:#fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 42px;
+    line-height: 35px;
+    width:calc(1720px - 400px);
+}
+
+.nav >li{
+    color:#fff;
+    font-size: 22px;
+}
+
+.nav > li > a{
+    color:#fff;
+    font-size: 24px;
+}
+
+.intro_text>div{
+    position: relative;
+    top: 308px;
+    left: 223px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.intro_text>div>img{
+    margin-bottom: -5px;
+}
+
+.intro_text>h1{
+    position: relative;
+    top: 220px;
+    left:213px;
+    font-size: 125px;
+    color: #fff;
+}
+
+.circle{
+    position: relative;
+    top: -490px;
+    left: 1010px;
+    background-image: url("image/circle.svg");
+    width: 910.5px;
+    height: 808.5px;
+
+}
+
+
+.title0{
+    animation: appear_left 0.5s ease-out;
+}
+
+.title1{
+    animation: appear_left 0.7s ease-out;
+}
+
+.title2{
+    animation: appear_left 1s ease-out;
+}
+
+
+/*
+.nav > li:not(:last-child){
+    border-right:1px solid #E1E1E1;
+}
+*/
+
+.main_text0{
+    width: 1920px;
+    height: 1160px;
+    background: #fff; /*매인컬러*/
+}
+
+.main_text0>ul{
+    margin: auto;
+    padding-top: 105px;
+    display: grid;
+    
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
+    
+    width: 1375px;
+    height: 950px;
+}
+
+.main_text0>ul>li{
+    background: #efefef;
+    width: 650px;
+    height: 280px;
+
+    display: grid;
+    
+    grid-template-columns: 1fr 2fr;
+}
+
+.icon5{
+    background-image: url("image/icon5.png");
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+}
+
+.icon6{
+    background-image: url("image/icon6.png");
+    width: 140px;
+    height: 170px;
+    margin: auto;
+
+}
+
+.icon7{
+    background-image: url("image/icon7.png");
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+}
+
+.icon8{
+    background-image: url("image/icon8.png");
+    width: 140px;
+    height: 140px;
+    margin: auto;
+
+}
+
+.icon9{
+    background-image: url("image/icon9.png");
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+}
+
+.icon10{
+    background-image: url("image/icon10.png");
+    width: 140px;
+    height: 140px;
+    margin: auto;
+}
+
+
+.main_text0>ul>li>div:last-child{
+    margin: auto 0px;
+    text-align: left;
+    font-size: 33.33px;
+}
+
+.board{
+    width: 1920px;
+    height: 100%;
+}
+
+.board_title{
+    text-align: center;
+    font-size: 80px;
+    color: #1E345B;
+    font-weight: bold;
+}
+
+.board_more{
+    position: relative;
+    top: -30px;
+    left: 1600px;
+    padding: 10px 20px 8px 30px;
+    width: 185px;
+    height: 65px;
+    border: 1px solid #707070;
+    color: #707070;
+    font-size: 33.33px;
+    /*padding: 10px 30px auto;*/
+}
+
+.board_main{
+    margin: auto 100px;
+    display: grid;
+    
+    grid-template-rows: 1.5fr 1fr 1fr 1fr;
+}
+
+.board_main>div{
+    display: grid;
+    grid-template-columns:1fr 2fr 4fr 2fr 2fr;
+    text-align: center;
+}
+
+.board_main>a{
+    display: grid;
+    grid-template-columns:1fr 2fr 4fr 2fr 2fr;
+    text-align: center;
+}
+
+.board_main>div:first-child{
+    border-top: 15px solid #1E345B;
+    border-bottom: 1px solid #1E345B;
+    padding: 15px 0px;
+    margin-bottom: 15px;
+}
+
+.board_main>div>div{
+    font-size: 33.33px;
+    color: #1E345B;
+    font-weight: 300;
+}
+
+.board_main>a>div{
+    font-size: 33.33px;
+    color: #1E345B;
+    font-weight: 600;
+    
+}
+.board_list2{
+    border-bottom: 1px solid #1E345B;
+}
+
+.board_number{
+    text-align: center;
+    margin: 60px auto;
+}
+
+.board_number>a{
+    width: 80px;
+    height: 80px;
+    padding: 0px 10px 5px 10px;
+    background: #1E345B;
+    font-size: 41.67px;
+    color: #fff;
+    text-align: center;
+}
+
+footer{  
+    background: #4d4d4d;
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      width: 1920px;
+      height: 270px;
+  }
+
+
+
+footer>div:first-child{
+    font-size: 75px;
+    color: #fff;
+    margin: 90px auto;
+    text-align: center;
+    /*background-image: url("image/Logo.jpg");*/
+}
+footer>div:nth-child(2){
+    font-size: 20.83px;
+    width: 670px;
+    height: 126px;
+    margin: 88px 0px 55px 0px;
+    padding-left: 16px;
+    border-left:1px solid #e1e1e138;
+    color: #fff;
+}
+
+footer>div:last-child{
+    margin-top: 120px;
+    font-size: 23.86px;
+    color: #fff;
+    padding: 60px;
+}
+
+.floating_bar{
+    position: fixed;
+    background: #2f2f2f; /*임의색상*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    /*display: flex;*/
+  }
+
+  .top{
+      margin-top: 5px;
+      /*flex:1;*/
+      text-align: center;
+  }
+  .top>a{
+    font-size: 25px;
+    color: #fff;
+  }
+
+
+@keyframes appear_left{
+    from{
+      left: -100px;
+      opacity: 0;
+    }
+    to{
+      left: 213px;
+      opacity: 1;
+    }
+}
+
+@keyframes disappear_left{
+  from{
+      left: 213px;
+      opacity: 1;
+  }
+  to{
+    left: -100px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes appear_right{
+  from{
+      right:-300px;
+      opacity: 0;
+  }
+  to{
+      right:0px;
+      opacity: 1;
+  }
+}
+
+@keyframes disappear_right{
+from{
+      right:0px;
+      opacity: 1;
+}
+to{
+      right:-300px;
+      opacity: 0;
+}
+}

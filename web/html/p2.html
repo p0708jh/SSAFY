@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid gray;
+        padding-bottom: 50px;
+      }
+      .T {
+        padding-top: 5px;
+        height: 50px;
+        background-color: gray;
+        border: 1px solid black;
+      }
+      .menuBord {
+        flex: 4;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 50px;
+
+      }
+      .buggerRound {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-color: black;
+        border-radius: 50%;
+        position: relative;
+      }
+      .buggerRound > div {
+        position: absolute;
+
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+        margin-top: 5px;
+        background-image: url("./hamburger.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .menu {
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 50px;
+        height: 200px;
+        flex: 4;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+
+      }
+      .menu1Img {
+        flex:1;
+        width: 200px;
+        height: 200px;
+        background-image: url("./hamburger.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .buggerNameWrapper1{
+        margin-left: 10px;
+        flex:2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+      }
+      .buggerNameWrapper2{
+        margin-right: 10px;
+        flex:2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+      }
+      .buggerName{
+        flex:1;
+        margin: 5px;
+        padding-top: 10px;
+        color:white;
+        font-size: 30px;
+        background-color: rgb(4, 118, 163);
+      }
+      .buggerNameContent{
+        flex:2;
+        padding-top: 10px;
+        color:black;
+        font-size: 30px;
+      }
+      
+      .menu2Img {
+        flex:1;
+        width: 200px;
+        height: 200px;
+        background-image: url("./hamburger.png");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="T"><h2>KFC World</h2></header>
+    <main class="menuWrapper">
+      <div class="menuBord">
+        <div class="buggerRound"><div></div></div>
+        <div><h2>메뉴판</h2></div>
+      </div>
+      <div class="menu">
+        <div class="menu1Img"></div>
+        <div class="buggerNameWrapper1">
+          <div class="buggerName">Fire Bugger</div>
+          <div class="buggerNameContent">
+            맵지 않습니다.
+            <br>다만 뜨거운 불타는 버거
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="buggerNameWrapper2">
+          <div class="buggerName">Degda Bugger</div>
+          <div class="buggerNameContent">
+            하나의 가격으로
+            <br>3개의 버거를 먹는 재미
+          </div>
+        </div>
+        <div class="menu2Img"></div>
+      </div>
+    </main>
+  </body>
+</html>

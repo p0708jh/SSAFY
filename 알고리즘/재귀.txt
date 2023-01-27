@@ -1,0 +1,84 @@
+#include <iostream>
+using namespace std;
+
+int path[2];
+
+void rec(int lev)
+{
+	if (lev == 2)
+		return;
+
+	for (int i = 0; i < 3; i++)
+	{
+		path[lev] = 1 + i;//경로 적고 재귀타기
+		rec(lev + 1);
+		path[lev] = 0;// 방금 적은거 지우기
+	}
+}
+
+
+int main()
+{
+	rec(0);
+	return 0;
+}
+
+
+#include <iostream>
+
+using namespace std;
+
+char path[5];
+void rec(int lev)
+{
+	if (lev == 4)
+	{
+		cout << path << '\n';
+		return;
+	}
+	for (int i = 'A'; i < 'Z'; i++)
+	{
+		path[lev] = i;
+		rec(lev + 1);
+	}
+}
+
+
+
+int main()
+{	
+	
+	
+	return 0;
+}
+
+
+//주사위 3개의합
+
+#include <iostream>
+using namespace std;
+
+char path[4];
+
+void rec(int lev ,int sum)
+{
+	if (lev == 3)
+	{
+		cout << path<<"="<<sum << "\n";
+		return;
+	}
+
+	for (char i = 1; i <= 6; i++)
+	{
+		path[lev] = '0'+i;
+		rec(lev + 1,sum+i);
+	}
+}
+
+
+int main()
+{	
+	rec(0,0);
+
+	return 0;
+}
