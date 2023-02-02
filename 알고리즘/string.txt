@@ -1,0 +1,18 @@
+string methods
+
+1. 길이
+str.length()
+
+2. 결합
+str+srt
+
+3. 대입가능
+str1=sr2
+
+4. 비교가능
+
+5. 부분문자열
+string.substr(시작인덱스,시작인덱스+길이)
+
+6. 문자열찾기
+string.find("찾는문자열")

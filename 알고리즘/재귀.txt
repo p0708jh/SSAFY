@@ -1,3 +1,14 @@
+주의사항
+
+//reset
+
+//input
+
+//solve
+
+//output
+
+
 #include <iostream>
 using namespace std;
 

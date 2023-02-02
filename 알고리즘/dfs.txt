@@ -1,0 +1,241 @@
+dfs
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+/*
+5 4
+1 2
+1 3
+1 4
+2 5
+*/
+
+//dfs 인접행렬 방식
+
+int nodeCnt, edgeCnt;
+int adj[6][6] = { 0 }; //adj[from][to] = 갈 수 있는가?
+
+void dfs(int now)
+{
+	
+	for (int to = 1; to <= nodeCnt; to++)
+	{
+		if (adj[now][to] == 0)
+			continue;
+		cout <<now<<"에서"<< to << "로 갑니다!\n";
+		dfs(to);
+	}
+}
+
+int main()
+{
+
+	cin >> nodeCnt >> edgeCnt;
+
+
+	//1. 인접 행렬
+
+	
+	for (int i = 0; i < edgeCnt; i++)
+	{
+		int from, to;
+		cin >> from >> to;
+		adj[from][to] = 1;
+	}
+
+	dfs(1);
+	
+	return 0;
+}
+
+//dfs 인접리스트 방식
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+/*
+5 5
+1 2
+1 3
+3 4
+4 5
+5 1
+*/
+
+vector<int> v[6];
+int nodeCnt, edgeCnt;
+
+int used[6] = { 0 };
+
+void dfs(int now)
+{
+	for (int i = 0; i < v[now].size(); i++)
+	{
+		
+		int to = v[now][i];
+		if (used[to] == 1)
+			continue;
+		used[to] = 1;
+		cout << now << "에서" << to << "로 갑니다\n";
+		dfs(to);
+	}
+}
+int main()
+{	
+	//2. 인접 리스트
+	cin >> nodeCnt >> edgeCnt;
+
+	for (int i = 0; i < edgeCnt; i++)
+	{
+		int from,to;
+		cin >> from >> to;
+		v[from].push_back(to);
+	}
+
+
+	used[1] = 1;
+	dfs(1);
+
+	return 0;
+}
+
+//1에서 5까지 경로 출력
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+/*
+5 5
+1 2
+1 3
+3 4
+4 5
+5 1
+*/
+
+vector<int> v[6];
+int nodeCnt, edgeCnt;
+
+int used[6] = { 0 };
+
+vector<int> path;
+
+void dfs(int now)
+{
+	
+	if (now == 5)
+	{
+		for (int i : path)
+			cout << i << " ";
+		return;
+	}
+	for (int i = 0; i < v[now].size(); i++)
+	{
+		int to = v[now][i];
+		if (used[to] == 1)
+			continue;
+		used[to] = 1;
+		cout << now << "에서" << to << "로 갑니다\n";
+
+		path.push_back(to);
+
+		dfs(to);
+
+		path.pop_back();
+	}
+}
+int main()
+{	
+	//2. 인접 리스트
+	cin >> nodeCnt >> edgeCnt;
+
+	for (int i = 0; i < edgeCnt; i++)
+	{
+		int from,to;
+		cin >> from >> to;
+		v[from].push_back(to);
+	}
+
+	path.push_back(1);
+	used[1] = 1;
+	dfs(1);
+
+	return 0;
+}
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+/*
+7 8
+1 2
+1 3
+2 4
+3 4
+4 5
+4 6
+5 7
+6 7
+*/
+
+vector<int> v[8];
+int nodeCnt, edgeCnt;
+
+int used[6] = { 0 };
+
+vector<int> path;
+
+void dfs(int now,int sum=1)
+{
+	//1에서 7까지 모든 경로,합 출력
+	if (now == 7)
+	{
+		for (int i : path)
+			cout << i << " ";
+		cout << "sum=" << sum;
+		cout << "\n";
+		return;
+	}
+	for (int i = 0; i < v[now].size(); i++)
+	{
+		int to = v[now][i];
+		if (used[to] == 1)
+			continue;
+		used[to] = 1;
+		cout << now << "에서" << to << "로 갑니다\n";
+
+		path.push_back(to);
+
+		dfs(to,sum+to);
+		used[to] = 0;
+		path.pop_back();
+	}
+}
+int main()
+{	
+	//2. 인접 리스트
+	cin >> nodeCnt >> edgeCnt;
+
+	for (int i = 0; i < edgeCnt; i++)
+	{
+		int from,to;
+		cin >> from >> to;
+		v[from].push_back(to);
+	}
+
+	path.push_back(1);
+	used[1] = 1;
+	dfs(1);
+
+	return 0;
+}

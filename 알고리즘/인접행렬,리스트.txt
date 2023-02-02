@@ -1,0 +1,63 @@
+경로 찾기 node(voltex),edge(간선)
+
+인접행렬(adj)
+
+장점: 특정 from 에서 특정 to로 갈 수 있는지 판별 용이
+       모든 from  to 에 대한 정보가 전부 있음
+
+단점: 메모리 낭비 node개수^2
+
+인접 리스트
+
+장점: 메모리 낭비가 없다. edge개수
+
+단점: 특정 from에서 특정 to로 갈 수 있는지 판별이 용이하지 않음
+
+	int nodeCnt, edgeCnt;
+
+	cin >> nodeCnt >> edgeCnt;
+
+
+	//1. 인접 행렬
+
+	int adj[6][6] = { 0 }; //adj[from][to] = 갈 수 있는가?
+	for (int i = 0; i < edgeCnt; i++)
+	{
+		int from, to;
+		cin >> from >> to;
+		adj[from][to] = 1;
+	}
+
+	// 특정 from에서 갈 수 있는 모든 to 찾기
+	int node = 1; // 특정 from으로 둘 점
+	for (int to = 1; to <= 5; to++)
+	{
+		if (adj[node][to] == 0)
+			continue;
+		// 갈 수 있는 점이다.
+		cout << to << " ";
+	}
+
+
+	int nodeCnt, edgeCnt;
+
+	cin >> nodeCnt >> edgeCnt;
+	//2. 인접 리스트
+	vector<int> v[6];
+
+	for (int i = 0; i < edgeCnt; i++)
+	{
+		int from,to;
+		cin >> from >> to;
+		v[from].push_back(to);
+	}
+
+	int node = 1;
+	for (int i = 0; i < v[node].size(); i++)
+	{
+		int to = v[node][i];
+		cout << to;
+	}
+
+	for (int i : v[node])
+		cout << i;

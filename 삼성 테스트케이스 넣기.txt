@@ -1,0 +1,9 @@
+#define _CRT_SECURE_NO_WARNING
+
+리소스 파일에 input.txt넣고
+
+int main()
+{
+	freopen("input.txt","r",stdin);	
+
+}
