@@ -1,0 +1,11 @@
+true:
+
+빈 배열,빈 객체
+
+false:
+
+0,"",undefined,null,false
+
+
+객체와 객체는 비교불가
+배열과 배열은 비교불가

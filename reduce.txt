@@ -1,0 +1,6 @@
+const accResult=array.reduce((acc,cur)=>{
+	console.log(acc cur);
+	return acc + cur;
+});
+
+console.log(accResult);

@@ -39,14 +39,14 @@ const orderList=[
   },
 ];
 
-const menu=orderList.filter(v=>v.cont!=0);
+const menu=orderList.filter(v=>v.count!=0);
 
 
 
-const menuEvent=menu.forEach(v => {
+menu.forEach(v => {
   console.log(v.mneu);
   if(v.event==true)
-  console.log(v.price/90);
+    console.log(v.price*9/10);
   else
-  console.log(v.price);
+    console.log(v.price);
 });
