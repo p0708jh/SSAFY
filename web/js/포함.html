@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <div>
+    배열
+  </div>
+  <input type="text" class="inputText">
+  <div>
+    포함 되었는지 확인할 값
+  </div>
+  <input type="text" class="checkText">
+  <button class="check">
+    결과
+  </button>
+  <div class="result"></div>
+
+  <script>
+    const arr=document.querySelector(".inputText");
+    const checkNum=document.querySelector(".checkText");
+    const result1=document.querySelector(".check");
+    
+    
+    
+   
+    result1.addEventListener('click',e=>{
+      const numArr=arr.value.split(',');
+      console.log(numArr);
+      const check=numArr.some(e=>e==checkNum.value);
+      const result=document.querySelector(".result");
+      result.textContent=check;
+    })
+    
+  </script>
+</body>
+</html>

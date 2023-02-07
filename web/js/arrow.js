@@ -1,0 +1,1 @@
+const go=(n)=>n*n;

@@ -1,0 +1,11 @@
+JSON 방식 JS 한정 X
+JSON은 중간다리 역할을 한다.
+
+
+JAVA
+Object -> 웹에서 보여줘야한다
+웹브라우저는  java언어를 모른다
+
+Python
+
+C++
