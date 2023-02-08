@@ -1,0 +1,19 @@
+데이터 갱신 방법
+
+// 서버사이드 데이터 갱신 방법
+
+JSP(java server page)
+
+JAVA + html 형식 -> 브라우저는 java 해석 능력이 없음
+서버에서 java형식을 읽어서 html로 만들어서 리턴
+이과정에서 새로고침이 일어난다
+
+// 클라이언트 데이터 갱신 방법
+
+Ajax(Asynchronous Javascript and XML)
+
+ex) megabox
+데이터를 비동기 요청 -> 그걸 그림
+
+데이터가 비어있으면 로딩
+-> 데이터가 들어오면 로딩 끄고 데이터 그리기

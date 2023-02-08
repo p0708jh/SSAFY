@@ -1,0 +1,32 @@
+비동기 통신
+
+자바스크립트는 싱글 스레드 기반 비동기 통신
+
+
+자바스트립트 X 웹브라우저 O
+
+자바스크립트가 아닌 웹브라우저가 비동기 통신을 해준다
+
+setTimeout 정확한 초를 표시하지 못한다
+(1000=> 약 1초)
+
+비동기에서 시점파악이 안돼서 해결방안
+
+1. 콜백함수를 콜백함수 안에 계속넣어 개발하였다.
+
+2. Promise의 탄생: Callback hell 을 해결하기 위해(2015 es6)
+
+3. async/await(es8)
+조건 : Promise로 리턴되는것들에 한해서만 가능
+앞에 async함수를 붙여줘야 await 사용 가능
+
+async function getDatas(){
+	//A 요청 데이터
+	//동기처럼 동작
+	const aData = awit axios.get("A");
+	//aData.then(dat=>{}).catch(error=>{}) Promise 이기때문 가능
+	//B에 요청을 하는데 A의 데이터를 보낼수 있다.	
+	const bData = awit axios.get("B",aData);
+	//B에 요청을 하는데 B의 데이터를 보낼수 있다.
+	const cData = awit axios.get("C",bData);
+}
