@@ -1,0 +1,16 @@
+DB
+
+SELECT : 조회
+
+SELECT 필드명 FROM TABLE; // SELECT name,age FROM minco.honey;
+
+// 조건문에서 and or = % 사용 
+SELECT 필드명 FROM TALE WHERE 조건; // SELECT * FROM minco.honey WHERE num >=2 and num<=2; SELECT * FROM minco.honey where age = 27;
+
+
+DB는 문자열 4칙연산 가능 문자열을 0으로 인식
+
+SELECT 123+45; 결과: 168
+SELECT 'SSAFY' + 123; 결과: 123
+
+UPDAT와 DELETE는 반드시 WHERE를 같이 써줘야 한다
