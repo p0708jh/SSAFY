@@ -1,0 +1,200 @@
+Dikstra Algorithm
+
+다익스트라(네덜란드 컴퓨터 과학자) 알고리즘 : 최단경로
+
+1. 가중치 X -> 최단경로 -> BFS
+2. 가중치 O -> chleksrjfl -> Dikstra
+
+핵심 : 가중치가 가장 작은것 위주로 고름
+
+// vector 버전
+
+준비 단계
+
+1. dist DAT 필요 ->dist[출발지] = 0
+2. used 필요(최단경로가 확정이 되었는지)
+
+구현 단계
+
+1. 모든 노드의 최단 거리가 확정 될 때 까지
+2. 현재 dist에 기록된[후보거리]중 가장 작은 간선을 가진 노드(now번 노드)를 찾는다.
+-> 이 노드로간다 = 이노드의 최단 거리는 확정된다
+
+3. now번 노드로부터 갈 수 있는 모든 간선들을 확인하면서 dist에 후보지를 갱신
+-> 만약 이미 가진 후보지보다 작거나 같은 경로가 나타나면 갱신할 필요 X
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <string>
+using namespace std;
+
+int node, edge;
+
+
+void run(int start,vector<vector<pair<int, int>>> v)
+{
+	vector<int> dist;
+	
+	for (int i = 0; i < node; i++)
+		dist.push_back(21e8);
+
+	dist[start] =0;
+	int used[10] = { 0 };
+
+	for (int i = 0; i < node; i++)
+	{
+		int mincost = 21e8;
+		int now = -1;
+		for (int j = 0; j < node; j++)
+		{
+			if (dist[j] >= mincost)
+				continue;
+			if (used[j] == 1)
+				continue;
+
+			mincost = dist[j];
+			now = j;
+		}
+		used[now] = 1;
+
+		for (int j = 0; j < v[now].size(); j++)
+		{
+			pair<int, int> next = v[now][j];
+			int ncost = dist[now] + next.second;
+			if (dist[next.first] <= ncost)
+				continue;
+			dist[next.first] = ncost;
+		}
+	}
+
+	for (int i = 0; i < node; i++)
+	{
+		cout << dist[i]<<" ";
+	}
+
+}
+
+int main()
+{
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	
+	
+	cin >> node >> edge;
+
+	vector<vector<pair<int,int>>> v(node);
+
+	for (int i = 0; i < edge; i++)
+	{
+		int a, b, c;
+		cin >> a >> b >> c;
+		v[a].push_back({ b,c });
+	}
+
+	
+
+	run(0, v);
+
+
+	return 0;
+}
+
+// pq 방법
+
+
+준비 단계
+
+1.priority queue 준비
+-> 시작 Edge를 일단 삽입 (시작 노드,0)
+2. dist DAT 필요 dist[출발지] = 0
+->모두 아주 큰값으로 채운 후
+-> 시작 노드까지의 최단 거리를 초기값 설정(0)
+2. used 필요(최단경로가 확정이 되었는지)
+
+구현 단계
+
+1. 더이상 갈 후보지가 없을때까지 반복
+2. 가장 가중치가 작은 간선 채택 -> (top) = now
+-> 이 노드를 확정!
+2. 현재 dist에 기록된[후보거리]중 가장 작은 간선을 가진 노드(now번 노드)를 찾는다.
+-> 이 노드로간다 = 이노드의 최단 거리는 확정된다
+
+3. now번 노드로부터 갈 수 있는 모든 간선들을 확인하면서 dist에 후보지를 갱신
+-> 만약 이미 가진 후보지보다 작거나 같은 경로가 나타나면 갱신할 필요 X
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <string>
+using namespace std;
+
+
+struct Node {
+	int node;
+	int price;
+};
+
+struct cmp {
+	bool operator()(Node a, Node b)
+	{
+		return a.price > b.price;
+	}
+
+};
+
+int dist[10] = { 0 };
+int used[10] = { 0 };
+void run(int start, vector<vector<Node>> v)
+{
+	
+	priority_queue<Node,vector<Node>,cmp> pq;
+	pq.push({ start, 0 });
+
+	while (!pq.empty())
+	{
+		Node now = pq.top();
+		pq.pop();
+		if(now.price>dist[now.node]) continue;
+		for (int i = 0; i < v[now.node].size(); i++)
+		{
+			Node next = v[now.node][i];
+			if (dist[next.node] <= now.price+next.price)
+				continue;
+			dist[next.node] = now.price+next.price;
+			pq.push({ next.node,now.price + next.price });
+		}
+	}
+}
+
+
+int main()
+{
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	int n,edge;
+	cin >> n >> edge;
+	vector<vector<Node>> v(n+1);
+
+	for (int i = 0; i < edge; i++)
+	{
+		int a, b, c;
+		cin >> a >> b >> c;
+		v[a].push_back({ b,c });
+	}
+
+	for (int& i : dist)
+		i = 21e8;
+
+	dist[0] = 0;
+	dist[1] = 0;
+	run(1, v);
+
+	for (int i : dist)
+			cout << i << ' ';
+
+	return 0;
+}

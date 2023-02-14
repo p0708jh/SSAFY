@@ -1,0 +1,21 @@
+정렬
+
+STL에서 구현된 알고리즘 사용 #include <algorithm>
+항상 O(NlogN) 보장
+c++ >> Intro Sort
+heap,insert,quick 정렬 하이브리드 되어있다
+
+priority queue // push,pop,top,empty
+(cmp는 구조체로 만들어 사용)
+
+struct cmp {
+	bool operator()(int left, int right) {
+		return left > right; //min heap 만들기: sort와 달리 false대로 실행된다
+	}
+};
+
+max heap과
+min heap
+
+sort 딱 한번만 정렬후 문제를 해결 할 수 있을때
+pq 계속해서 새로운값이 삽입 추출 될 때(변화가 있을때)
