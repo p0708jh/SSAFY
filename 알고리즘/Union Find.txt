@@ -1,0 +1,202 @@
+Union Find (Disjoint Set: 분리집합 알고리즘)
+
+- 소속/그룹을 만들고 유지/관리하는 알고리즘
+
+Union: 서로 두개 다른 집합을 결합하는 작업
+
+Find: 특정 소속에 속한 멤버가 "어떤 소속에 포함되어 있는가"를 찾아가고, 판단하는 작업(재귀적 동작)
+	특정 노드에 대해 나의 부모는 DAT로 기록(자기자신의 보무는 자기자신으로 초기화 먼저)
+
+Find 최적화 => path Compresson(경로압축)
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <string>
+using namespace std;
+
+/* 9개의 노드,6개의 결합 정보
+9 7
+0 3
+3 6
+6 8
+3 7
+1 4
+2 5
+0 1
+*/
+
+int parent[20];
+int N, M;
+
+int Find(int now)
+{
+	//now의 부모가 나랑 같다면 소속을 찾았다!
+
+	if (now == parent[now])
+		return now;
+
+	return parent[now]= Find(parent[now]);
+	
+}
+
+void Union(int A, int B)
+{
+	// 각 A와 B의 소속을 확인
+
+	int pa = Find(A);
+	int pb = Find(B);
+	parent[pb] = pa;
+}
+
+
+int main()
+{
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	cin >> N >> M;
+
+	for (int i = 0; i < N; i++)
+	{
+		parent[i] = i;
+	}
+
+
+	for (int i = 0; i < M; i++)
+	{
+		int a, b;
+		cin >> a >> b;
+		Union(a,b);
+	}
+
+	int a, b;
+	cin >> a >> b;
+	if (Find(a) == Find(b)) // 같은소속은 Find로 비교를 하면서 업데이트 된다
+		cout << "같음";
+	else
+		cout << "다름";
+
+	return 0;
+}
+
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <string>
+using namespace std;
+
+/* 9개의 노드,6개의 결합 정보
+9 7
+0 3
+3 6
+6 8
+3 7
+1 4
+2 5
+0 1
+*/
+
+struct Node {
+	int node;
+	int person;
+
+};
+
+Node parent[20];
+int N, M;
+
+int Find(int now)
+{
+	//now의 부모가 나랑 같다면 소속을 찾았다!
+
+	if (now == parent[now].node)
+		return now;
+
+	return parent[now].node= Find(parent[now].node);
+	
+}
+
+void Union(int A, int B)
+{
+	// 각 A와 B의 소속을 확인
+
+	int pa = Find(A);
+	int pb = Find(B);
+
+	// 만약 A와 B가 이미 같은 소속이라면 아래 합병을 거치지 마라!
+	if (pa == pb)
+		return;
+
+
+	// 합병
+	parent[pb].node = pa;
+
+
+	parent[pa].person +=10;
+	parent[pb].person -=10;
+}
+
+
+int main()
+{
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	cin >> N >> M;
+
+	for (int i = 0; i < N; i++)
+	{
+		int tmp;
+		cin >> tmp;
+		parent[i].person = tmp;
+		parent[i].node = i;
+	}
+
+
+	for (int i = 0; i < M; i++)
+	{
+		int a, b;
+		cin >> a >> b;
+
+
+		//Union을 하기 전에, 이런 문제에서는, 이미 결합된 소속을 다시 결합하면 문제가 생길 수 있다!
+		//#1. Uninon을 하기 전에 결합 여부 확인
+		/*if (Find(a) == Find(b))
+			continue;*/
+		Union(a,b);
+	}
+
+	//int a, b;
+	//cin >> a >> b;
+	//if (Find(a) == Find(b)) // 같은소속은 Find로 비교를 하면서 업데이트 된다
+	//	cout << "같음";
+	//else
+	//	cout << "다름";
+
+	// N개의 IT 회사
+	// 회사들이 경제가 안좋아 망하면서 M개의 인수합병 과정을 밟는다.
+	// A가 B를 인수 할 때, A회사가 대표 회사가 되고,
+	// B 회사로부터 10명의 개발자를 빼올거다.
+	// M 개의 인수합병을 거친 후, 각 회사에 몇 명의 개발자가 남아았는지를 출력
+	// input
+	
+	/*
+	6 5
+	10 20 30 40 50 60
+	0 1
+	3 0
+	3 4
+	4 3
+	2 5
+	*/
+	// output : 10 10 40 60 40 50
+	for (int i = 0; i < N; i++)
+		cout << parent[i].person<<' ';
+	return 0;
+}
