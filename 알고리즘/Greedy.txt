@@ -1,0 +1,23 @@
+Greedy(Approximation Algorithm)로 풀 수 있나?
+
+1. Greedy choice Property
+2. Optimal substructer
+
+동전문제는 그전 동전의 배수로 이루어질때만 성립
+
+SVIP과정을 거치며 예외 케이스를 생각하기 
+
+Selection(선택): 기준(Sort,PQ)
+validation(검증): 예제 케이스
+Implementation(구현):
+Pray(기도): 안되면
+
+1. 기준 바꿔보기
+2. Greedy 아님-> 다른 접근 필요
+
+
+// 최인호 대표
+
+DP가 뭔지 알고 그에 반하는게 그리디
+
+2~30개 유형밖에없다
