@@ -1,0 +1,12 @@
+EJS -> SSR
+
+node에서 log를 관리하는 법
+
+기존 -> console.log
+기록을 파일에 남겨서 조회
+
+	JAP(Java Server Page)
+
+클라이언트의 요청을 수신
+-> JAVA + HTML 형식인 jsp를 완성된 형태의 html을 만들어서 리턴
+-> 이 과정에서 새 요청마다 html이 만들어져서 깜빡임 발생

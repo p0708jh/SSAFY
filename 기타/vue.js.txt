@@ -1,0 +1,58 @@
+데브옵스
+
+배포할때 ps -ef로 찾아서 kill-9로 죽이고
+폴더에서 다시 복사해서 넣고 다시 node index.js를 실행
+
+-> 반복 작업 불편
+jenkins, 운영관련 nginx, 여러가지 자동화..
+
+
+	SSR(Server Side Rendering)->SEO(검색엔진 최적화 쉬움)
+
+JSP(java server page)
+일반적으로 브라우저는 java를 해석할 능력 X
+백엔드에서 jsp를 읽어 DB 연동 후
+완성된 HTML을 만들어서 리턴
+
+
+검색엔진 크롤러가 탐색
+-> 완성된 데이터를 긁어오기 때문에 크롤러가 가져올 정보가 많다.
+
+	CSR(Client Side Rendering)->SEO(검색엔진 최적화 약함)
+
+React.js
+
+Vue.js -> SPA(single page application)
+
+Virtual DOM : 실제 DOM 이전에 가상으로 처리해서 최종적으로 한번만 렌더링 해 DOM으로 보내줌
+
+Progressive JavaScript Framework
+JS프로젝트에서 점진적으로 수정해 나가면서 Vue.js를 적용시킬 수 있다.(완전히 뒤엎는 것이 아닌 수정하는 방식)
+
+	데이터 바인딩
+
+양방향 바인딩
+
+{{ }}
+데이터를 바꾸면 HTML이 바뀐다
+HTML을 바꾸면 데이터도 바뀐다
+
+v-model(input data) : input 이 있을때만 사용
+
+input 에 value를 지정해도 input value가 바뀌고
+input에서 입력을 해도 input value가 변경된다
+
+
+
+
+v-bind 단방향 바인딩
+
+데이터를 바꾸면 HTML이 바뀐다
+HTML을 바꿔도 데이터가 바뀌지 않는다
+
+attribute를 변수처럼 바꾸려고 사용
+
+v-if true면 보여줌 false면 안보여줌
+
+v-for key를 무조건 써줘야함
+
