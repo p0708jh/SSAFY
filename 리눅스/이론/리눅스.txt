@@ -1,0 +1,9 @@
+-> 사실 리눅스는 OS가 아니라, OS 안에 있는 커널이었다!
+
+-> OS: 커널 + SHELL(app)
+-> window OS : 윈도우용 커널이 안에 있다
+
+Ubuntu != 리눅스
+Ubuntu = 리눅스(커널) + shell
+
+Ubuntu = 리눅스 배포판
