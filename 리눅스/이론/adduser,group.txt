@@ -1,0 +1,29 @@
+
+sudo adduser carrot
+sudo adduser jplace 
+sudo adduser inho 
+sudo adduser onnew 
+sudo adduser tigerstar 
+
+sudo addgroup embedded
+sudo addgroup web
+sudo addgroup temp
+
+sudo gpasswd -a carrot embedded 
+sudo gpasswd -a jplace embedded 
+sudo gpasswd -a inho embedded 
+sudo gpasswd -a onnew web
+sudo gpasswd -a tigerstar web
+sudo gpasswd -a inho web
+
+touch aaa bbb ccc ddd
+
+sudo chown carrot:web aaa
+sudo chown root:embedded bbb
+sudo chown jplace:tigerstar ccc
+sudo chown inho:temp ddd
+
+sudo chmod 404 ./aaa
+sudo chomod 660 ./bbb
+sudo chmod 707 ./ccc
+sudo chmod 004 ./ddd
